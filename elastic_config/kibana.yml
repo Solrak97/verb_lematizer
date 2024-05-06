@@ -170,5 +170,5 @@ elasticsearch.ssl.verificationMode: none
 elasticsearch.hosts: ['http://127.0.0.1:9200']
 elasticsearch.serviceAccountToken: AAEAAWVsYXN0aWMva2liYW5hL2Vucm9sbC1wcm9jZXNzLXRva2VuLTE3MDkyNzQ2MzkzMDI6VnJvU2hnS2dTOS04UTUyLWpmZUlpdw
 elasticsearch.ssl.certificateAuthorities: [/Users/camila/Documents/kibana-8.12.1/data/ca_1709274640417.crt]
-xpack.fleet.outputs: [{id: fleet-default-output, name: default, is_default: true, is_default_monitoring: true, type: elasticsearch, hosts: ['https://192.168.0.197:9200'], ca_trusted_fingerprint: 51398604a5353a632d50a97579e79e6783c8576f7a73f4c149a722d32bffdd19}]
+xpack.fleet.outputs: [{id: fleet-default-output, name: default, is_default: true, is_default_monitoring: true, type: elasticsearch, hosts: ['https://localhost:9200'], ca_trusted_fingerprint: 51398604a5353a632d50a97579e79e6783c8576f7a73f4c149a722d32bffdd19}]
 
