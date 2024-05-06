@@ -114,11 +114,11 @@ def searchAndWrite(queryBody, pos):
   hits = result["hits"]["hits"]
 
     # Open a file in write mode
-  with open("resultados.txt", "w") as f:
+  with open("resultados.csv", "w") as f:
     # Process initial hits
     for hit in hits:
         # Write data to file
-        f.write(f"{hit['_source'].get('book')}, {hit['_source'].get('number')}, {hit['_source'].get('sentence')}\n")
+        f.write(f"\"{hit['_source'].get('book')}\",{hit['_source'].get('number')},\"{hit['_source'].get('sentence')}\" \n")
 
     # Scroll through remaining hits
     while True:
@@ -128,11 +128,12 @@ def searchAndWrite(queryBody, pos):
         hits = scroll_response["hits"]["hits"]
         
         for hit in hits:
-            f.write(f"{hit['_source'].get('book')}, {hit['_source'].get('number')}, {hit['_source'].get('sentence')}\n")
+            f.write(f"\"{hit['_source'].get('book')}\",{hit['_source'].get('number')},\"{hit['_source'].get('sentence')}\"\n")
         
         # Check if there are no more hits
         if not hits:
-            break
+            break 
+    print("Se retornaron ", result['hits']['total']['value'], " oraciones")
 
 
 client = Elasticsearch("http://localhost:9200")
